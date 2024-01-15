@@ -1,20 +1,26 @@
 import { Fragment, useEffect, useState } from "react";
 import { getImpresorasById } from "./services/impresoras3dService";
 import "./impresoras3d.css";
-export default function Impresoras3dById({id}){
+export default function Impresoras3dById(){
     const [impresora3d,setImpresora3d] = useState({});
+    const [id,setId] = useState(null);
+
 
     useEffect(() => {
         getImpresorasById(id).then((response) => {
             setImpresora3d(response.data);
-        });
-    },[])
+        }).catch((error) => console.log(error));
+    },[id])
+
+    const handleId = (e) => {
+        setId(e.target.value)
+    }
 
     const Impresoras = () =>{
         return (
             <Fragment key={1}>
                 <div className="card" style={{width: 18 + 'rem'}}>
-                    <img src="..." className="card-img-top" alt="..."></img>
+                <img src="https://ventanillavirtual.micm.gob.do/Content/Fotos/nodisponible.png" className="card-img-top" style={{width:200+'px'}}/>
                     <div className="card-body">
                         <h5 className="card-title">{impresora3d.marca}</h5>
                         <p className="card-text">{impresora3d.modelo}</p>
@@ -27,11 +33,12 @@ export default function Impresoras3dById({id}){
                 </div>
             </Fragment> 
         )}
-
-    return (
-    <>
-        <h2>Impresora3D by {id}</h2>
-        <div className="container">
+        
+        return (
+            <>
+        <h2>Impresora3D by <input type="text" name="id" className="idInput" onChange={handleId}/></h2>
+        <div className="containerR">
+        
         <Impresoras></Impresoras>
         </div>
     </>

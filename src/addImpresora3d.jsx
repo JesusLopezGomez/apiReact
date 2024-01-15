@@ -14,36 +14,38 @@ export default function AddImpresora3d() {
         setImpresora3d({...impresora3d, [e.target.name]: e.target.value})
     }
 
+    const saveImpresora3d = (e) => {
+        e.preventDefault();
+        addImpresora3d(impresora3d).then(() => {
+            console.log("Impresora añadida con éxito");
+        }).catch((error) => console.log(error));
+    }
 
     return (
-        <div>
-            <h2>Añadir impresora 3d</h2>
+        <div className="container mt-5">
+            <h2>Añadir impresora 3D</h2>
             <form>
-                <div>
-                    <label htmlFor="marca">
-                        Marca:
-                        <input type="text" name="marca" id="marca" onChange={handleManage}/>
-                    </label>
+                <div className="mb-3">
+                    <label htmlFor="marca" className="form-label">Marca:</label>
+                    <input type="text" className="form-control" id="marca" name="marca" onChange={handleManage} />
                 </div>
-                <div>
-                    <label htmlFor="marca">
-                        Modelo:
-                        <input type="text" name="modelo" id="modelo" onChange={handleManage}/>
-                    </label>
+                <div className="mb-3">
+                    <label htmlFor="modelo" className="form-label">Modelo:</label>
+                    <input type="text" className="form-control" id="modelo" name="modelo" onChange={handleManage} />
                 </div>
-                <div>
-                    <label htmlFor="marca">
-                        Medida:
-                        <input type="text" name="medida" id="medida" onChange={handleManage}/>
-                    </label>
+                <div className="mb-3">
+                    <label htmlFor="medida" className="form-label">Medida:</label>
+                    <input type="text" className="form-control" id="medida" name="medida" onChange={handleManage} />
                 </div>
-                <div>
-                    <label htmlFor="marca">
-                        Email:
-                        <input type="text" name="email" id="email" onChange={handleManage}/>
-                    </label>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email:</label>
+                    <input type="text" className="form-control" id="email" name="email" onChange={handleManage} />
                 </div>
-                <button type="submit">Añadir</button>
+                <div className="mb-3">
+                    <label htmlFor="precio" className="form-label">Precio:</label>
+                    <input type="text" className="form-control" id="precio" name="precio" onChange={handleManage} />
+                </div>
+                <button type="submit" className="btn btn-primary" onClick={saveImpresora3d}>Añadir</button>
             </form>
         </div>
     );
