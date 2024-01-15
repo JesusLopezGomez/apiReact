@@ -8,7 +8,7 @@ export default function Impresoras3d() {
         getImpresoras3d().then((response) => {
             setImpresoras3d(response.data);
         }).catch((error) => console.log(error));
-    }, [impresoras3d.length])
+    }, [])
 
     const deleteImpresora = (e) => {
         let idDel = e.target.id;
