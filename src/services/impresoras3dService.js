@@ -11,3 +11,5 @@ export const getImpresorasById = (id) => client.get(id);
 export const addImpresora3d = (impresora) => client.post("",impresora);
 
 export const deleteImpresora3d = (id) => client.delete(id);
+
+export const editImpresora3d = (id,impresora) => client.put(id,impresora);

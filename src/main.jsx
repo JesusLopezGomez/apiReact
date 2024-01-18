@@ -9,8 +9,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Impresoras3d></Impresoras3d>
     <br></br>
-    <Impresoras3dById id={"6564516a831d901024fa6f01"}></Impresoras3dById>
+    <Impresoras3dById></Impresoras3dById>
     <br></br>
-    <AddImpresora3d></AddImpresora3d>
+    <AddImpresora3d id={'65a90498367e69833055f898'}></AddImpresora3d>
   </React.StrictMode>,
 )
