@@ -1,20 +1,19 @@
 import { Fragment, useEffect, useState } from "react";
-import { getImpresorasById } from "./services/impresoras3dService";
+import { getImpresorasById } from "../services/impresoras3dService";
 import "./impresoras3d.css";
+import { useParams } from "react-router-dom";
 export default function Impresoras3dById(){
     const [impresora3d,setImpresora3d] = useState({});
-    const [id,setId] = useState(null);
+    const { id } = useParams();
 
 
     useEffect(() => {
         getImpresorasById(id).then((response) => {
+            console.log(response.data)
             setImpresora3d(response.data);
         }).catch((error) => console.log(error));
     },[id])
 
-    const handleId = (e) => {
-        setId(e.target.value)
-    }
 
     const Impresoras = () =>{
         return (
@@ -36,7 +35,7 @@ export default function Impresoras3dById(){
         
         return (
             <>
-        <h2>Impresora3D by <input type="text" name="id" className="idInput" onChange={handleId}/></h2>
+        <h2>Impresora3D by </h2>
         <div className="containerR">
         
         <Impresoras></Impresoras>

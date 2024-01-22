@@ -1,7 +1,9 @@
 import { Fragment, useEffect, useState } from "react";
-import { addImpresora3d,getImpresorasById,editImpresora3d } from "./services/impresoras3dService";
+import { addImpresora3d,getImpresorasById,editImpresora3d } from "../services/impresoras3dService";
 import "./impresoras3d.css";
-export default function AddImpresora3d({id}) {
+import { useParams } from "react-router-dom";
+export default function AddImpresora3d() {
+    const { id } = useParams();
     const [impresora3d, setImpresora3d] = useState({
         marca:'',
         modelo:'',
@@ -9,6 +11,7 @@ export default function AddImpresora3d({id}) {
         email:'',
         precio:'',
     });
+
 
     useEffect(() => {
         getImpresorasById(id)

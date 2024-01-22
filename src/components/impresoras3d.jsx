@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useState } from "react";
-import { deleteImpresora3d,getImpresoras3d } from "./services/impresoras3dService";
+import { deleteImpresora3d,getImpresoras3d } from "../services/impresoras3dService";
 import "./impresoras3d.css";
+import { Link } from "react-router-dom";
 export default function Impresoras3d() {
     const [impresoras3d, setImpresoras3d] = useState([]);
 
@@ -31,6 +32,7 @@ export default function Impresoras3d() {
                         <li className="list-group-item">Email: {impresora.email}</li>
                         <li className="list-group-item">Precio: {impresora.precio}</li>
                     </ul>
+                    <Link to={`/editImpresora3d/${impresora._id}`} className="btn btn-warning">Editar</Link>
                     <button className="btn btn-danger" id={impresora._id} onClick={deleteImpresora}>Eliminar</button>
                 </div>
             </Fragment>        
