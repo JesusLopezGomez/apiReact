@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { deleteImpresora3d,getImpresoras3d } from "../services/impresoras3dService";
+import { deleteImpresora3d,getImpresoras3d } from "../../services/impresoras3dService";
 import "./impresoras3d.css";
 import { Link } from "react-router-dom";
 export default function Impresoras3d() {

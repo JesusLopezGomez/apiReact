@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
-import { addImpresora3d,getImpresorasById,editImpresora3d } from "../services/impresoras3dService";
+import { addImpresora3d,getImpresorasById,editImpresora3d } from "../../services/impresoras3dService";
 import "./impresoras3d.css";
 import { useParams } from "react-router-dom";
 export default function AddImpresora3d() {

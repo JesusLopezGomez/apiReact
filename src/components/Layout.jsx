@@ -3,12 +3,12 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 const Layout = () => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
-  
-  function haddleChange(e){
+
+  function haddleChange(e) {
     setInput(e.target.value);
   }
 
-  function navigateF(){
+  function navigateF() {
     navigate(`/search/${input}`);
   }
 
@@ -31,10 +31,16 @@ const Layout = () => {
               <li className="nav-item">
                 <Link to="/addImpresora3d" className="nav-link active">Añadir impresora 3D </Link>
               </li>
+              <li className="nav-item">
+                <Link to="/repuestos" className="nav-link active">Repuestos</Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/manageRepuesto" className="nav-link active">Añadir repuesto</Link>
+              </li>
             </ul>
             <div className="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={haddleChange}/>
-              <button class="btn btn-outline-success" type="submit" onClick={navigateF}>Search</button>
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={haddleChange} />
+              <button className="btn btn-outline-success" type="submit" onClick={navigateF}>Search</button>
             </div>
           </div>
         </div>
