@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-    baseURL:"http://localhost:3000/impresora3d/",
+    baseURL:"https://proyecto-node-beryl.vercel.app/impresora3d/",
 })
 
 const getImpresoras3d = () => client.get();
