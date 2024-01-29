@@ -37,6 +37,9 @@ const Layout = () => {
               <li className="nav-item">
                 <Link to="/manageRepuesto" className="nav-link active">Añadir repuesto</Link>
               </li>
+              <li className="nav-item">
+                <Link to="/register" className="nav-link active">Registro</Link>
+              </li>
             </ul>
             <div className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={haddleChange} />
