@@ -6,6 +6,8 @@ import Impresoras3dById from "./components/impresoras3d/impresoras3dById";
 import Repuestos from "./components/repuestos/repuestos";
 import ManageRepuesto from "./components/repuestos/manageRepuesto";
 import Register from "./components/usuario/register";
+import Filamentos from "./components/filamentos/filamentos";
+import ManageFilamento from "./components/filamentos/manageFilamento";
 
 const Router = () => {
   return (
@@ -21,6 +23,9 @@ const Router = () => {
             <Route path="manageRepuesto" element={<ManageRepuesto></ManageRepuesto>}></Route>
             <Route path="manageRepuesto/:id" element={<ManageRepuesto></ManageRepuesto>}></Route>
             <Route path="register" element={<Register></Register>}></Route>
+            <Route path="filamentos" element={<Filamentos></Filamentos>}></Route>
+            <Route path="manageFilamento" element={<ManageFilamento></ManageFilamento>}></Route>
+            <Route path="manageFilamento/:id" element={<ManageFilamento></ManageFilamento>}></Route>
             <Route path="*" element={<Impresoras3d />}></Route>
           </Route>
         </Routes>
