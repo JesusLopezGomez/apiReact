@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-    baseURL:"https://proyecto-node-beryl.vercel.app/usuario/",
+    baseURL:"http://localhost:3000/usuario/",
 })
 
 const getUsuarios = () => client.get();
